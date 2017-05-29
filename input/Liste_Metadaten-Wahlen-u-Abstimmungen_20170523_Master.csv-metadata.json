@@ -1,0 +1,71 @@
+{
+  "@context": "http://www.w3.org/ns/csvw",
+  "url": "example.csv",
+  "tableSchema": {
+    "columns": [
+      {
+        "titles": "UUID"
+      },
+      {
+        "titles": "URL"
+      },
+      {
+        "titles": "Dateiname"
+      },
+      {
+        "titles": "Kategorie"
+      },
+      {
+        "titles": "Titel"
+      },
+      {
+        "titles": "Urheber"
+      },
+      {
+        "titles": "Entstehungszeitraum "
+      },
+      {
+        "titles": "Koordninaten"
+      },
+      {
+        "titles": "Gewählt/Angenommen"
+      },
+      {
+        "titles": "Name, Vorname"
+      },
+      {
+        "titles": "politische Zuordnung"
+      },
+      {
+        "titles": "Stimmberechtigte"
+      },
+      {
+        "titles": "Stimmzettel JA"
+      },
+      {
+        "titles": "Stimmzettel NEIN"
+      },
+      {
+        "titles": "Stimmzettel UNGUELTIG"
+      },
+      {
+        "titles": "Stimmzettel LEER"
+      },
+      {
+        "titles": "Stimmzettel TOTAL"
+      },
+      {
+        "titles": "Thema"
+      },
+      {
+        "titles": "Format"
+      },
+      {
+        "titles": "Verwertungsrecht"
+      },
+      {
+        "titles": "Unternehmen/Publisher"
+      }
+    ]
+  }
+}

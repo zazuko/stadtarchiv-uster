@@ -1,0 +1,53 @@
+{
+  "@context": "http://www.w3.org/ns/csvw",
+  "url": "example.csv",
+  "tableSchema": {
+    "columns": [
+      {
+        "titles": "PID/UUID"
+      },
+      {
+        "titles": "URL"
+      },
+      {
+        "titles": "Dateiname"
+      },
+      {
+        "titles": "Titel"
+      },
+      {
+        "titles": "Urheber"
+      },
+      {
+        "titles": "Entstehungszeitraum (JJJJ)"
+      },
+      {
+        "titles": "Koordninaten"
+      },
+      {
+        "titles": "Adresse"
+      },
+      {
+        "titles": "PLZ/Ort"
+      },
+      {
+        "titles": "Thema"
+      },
+      {
+        "titles": "Inhalt"
+      },
+      {
+        "titles": "Format"
+      },
+      {
+        "titles": "Ereignis"
+      },
+      {
+        "titles": "Verwertungsrecht"
+      },
+      {
+        "titles": "Unternehmen/Publisher"
+      }
+    ]
+  }
+}
