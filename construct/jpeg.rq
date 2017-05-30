@@ -1,0 +1,18 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema: <http://schema.org/>
+PREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+WITH <http://example.com/gujer>
+DELETE {
+  ?s <http://schema.org/fileFormat> "jpeg" .
+}
+INSERT {
+  ?s <http://schema.org/fileFormat> "image/jpeg" .
+}
+WHERE { 
+        ?s a schema:Photograph ;
+       <http://schema.org/fileFormat> "jpeg" .
+}
