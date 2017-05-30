@@ -1,0 +1,137 @@
+{
+  "@context": "http://www.w3.org/ns/csvw",
+  "url": "votations.csv",
+  "dialect": {
+    "delimiter": ";"
+  },
+  "tableSchema": {
+    "aboutUrl": "http://data.uster.ch/votations/{uuid}",
+    "columns": [
+      {
+        "titles": "uuid",
+        "propertyUrl": "skos:notation"
+      },
+      {
+        "titles": "url",
+        "propertyUrl": "schema:image",
+        "valueUrl": "{+url}"
+      },
+      {
+        "titles": "filename",
+        "propertyUrl": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName"
+      },
+      {
+        "titles": "category",
+        "propertyUrl": "schema:keywords"
+      },
+      {
+        "titles": "titel",
+        "propertyUrl": "dc:title"
+      },
+      {
+        "titles": "creator",
+        "propertyUrl": "dc:creator"
+      },
+      {
+        "titles": "date",
+        "propertyUrl": "dc:date",
+        "datatype": {
+          "base": "date",
+          "format": "dd.MM.yyyy"
+        }
+      },
+      {
+        "titles": "coordinates",
+        "propertyUrl": "http://example.org/lv03"
+      },
+      {
+        "titles": "elected",
+        "propertyUrl": "http://example.org/elected"
+      },
+      {
+        "titles": "name",
+        "propertyUrl": "http://example.org/name"
+      },
+      {
+        "titles": "politicalparty",
+        "propertyUrl": "http://example.org/politicalparty"
+      },
+      {
+        "titles": "votingstock",
+        "propertyUrl": "http://example.org/votingstock"
+      },
+      {
+        "titles": "ballot_yes",
+        "datatype": {
+          "base": "integer",
+          "format": {
+            "groupChar": "'"
+          }
+        },
+        "propertyUrl": "http://example.org/ballot_yes"
+      },
+      {
+        "titles": "ballot_no",
+        "datatype": {
+          "base": "integer",
+          "format": {
+            "groupChar": "'"
+          }
+        },
+        "propertyUrl": "http://example.org/ballot_no"
+      },
+      {
+        "titles": "ballot_invalid",
+        "datatype": {
+          "base": "integer",
+          "format": {
+            "groupChar": "'"
+          }
+        },
+        "propertyUrl": "http://example.org/ballot_invalid"
+      },
+      {
+        "titles": "ballot_empty",
+        "datatype": {
+          "base": "integer",
+          "format": {
+            "groupChar": "'"
+          }
+        },
+        "propertyUrl": "http://example.org/ballot_empty"
+      },
+      {
+        "titles": "ballot_total",
+        "datatype": {
+          "base": "integer",
+          "format": {
+            "groupChar": "'"
+          }
+        },
+        "propertyUrl": "http://example.org/ballot_total"
+      },
+      {
+        "titles": "topic",
+        "propertyUrl": "schema:keywords"
+      },
+      {
+        "titles": "format",
+        "propertyUrl": "schema:fileFormat"
+      },
+      {
+        "titles": "license",
+        "propertyUrl": "schema:license",
+        "valueUrl": "{+license}"
+      },
+      {
+        "titles": "publisher",
+        "propertyUrl": "schema:publisher"
+      },
+      {
+        "virtual": true,
+        "propertyUrl": "rdf:type",
+        "valueUrl": "schema:Photograph"
+      }
+    ]
+  }
+}
