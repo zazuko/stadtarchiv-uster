@@ -1,0 +1,1 @@
+docker run --rm -ti --name tabular -v ~/workspace/zazuko/stadtarchiv-uster:/data zazukoians/tabular /bin/bash

@@ -1,0 +1,1 @@
+rdf serialize gujer.csv --output-format ntriples -o ../target/gujer.nt
