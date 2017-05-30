@@ -1,10 +1,12 @@
 {
   "@context": "http://www.w3.org/ns/csvw",
-  "url": "example.csv",
+  "url": "Liste_Metadaten-Wahlen-u-Abstimmungen_20170523_Master.csv",
   "tableSchema": {
+    "aboutUrl": "http://data.uster.ch/wahlen/{UUID}",
     "columns": [
       {
-        "titles": "UUID"
+        "titles": "UUID",
+        "propertyUrl": "skos:notation"
       },
       {
         "titles": "URL"

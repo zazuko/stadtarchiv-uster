@@ -1,0 +1,18 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema: <http://schema.org/>
+PREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+INSERT { GRAPH <http://example.com/gujer> {
+	?s schema:dateCreated ?newdate .
+}}
+WHERE { GRAPH <http://example.com/gujer> {
+    
+    ?s a schema:Photograph ;
+       <http://data.alod.ch/alod/legacyTimeRange> ?legacyTimeRange .
+
+    BIND ( IF(STRLEN(?legacyTimeRange) = 4, xsd:date(CONCAT(?legacyTimeRange,"-01-01")), IF(CONTAINS(?legacyTimeRange, "-"), xsd:date(CONCAT(STRBEFORE(?legacyTimeRange, "-"),"-01-01")) , IF(CONTAINS(?legacyTimeRange, " "), xsd:date(CONCAT(STRAFTER(?legacyTimeRange, " "),"-01-01")), xsd:date("1000-01-01")))) AS ?newdate )
+
+}}

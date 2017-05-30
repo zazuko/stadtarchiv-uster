@@ -1,13 +1,19 @@
 {
   "@context": "http://www.w3.org/ns/csvw",
-  "url": "example.csv",
+  "url": "Liste_Metadatenerfassung-Gujer-Fotos_20170523-Master.csv",
+  "dialect": {
+    "delimiter": ","
+  },
   "tableSchema": {
+    "aboutUrl": "http://data.uster.ch/gujer/{Titel}",
     "columns": [
       {
-        "titles": "PID/UUID"
+        "titles": "PID/UUID",
+        "name": "uid"
       },
       {
-        "titles": "URL"
+        "titles": "URL",
+        "propertyUrl": "schema:alternateName"
       },
       {
         "titles": "Dateiname"
@@ -47,6 +53,11 @@
       },
       {
         "titles": "Unternehmen/Publisher"
+      },
+      {
+        "virtual": true,
+        "propertyUrl": "rdf:type",
+        "valueUrl": "http://schema.org/Photograph"
       }
     ]
   }

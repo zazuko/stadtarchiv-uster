@@ -1,0 +1,32 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema: <http://schema.org/>
+PREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+WITH  <http://example.com/gujer>
+
+DELETE {
+      ?s <http://example.org/streetAddress> ?streetAddress ;
+         <http://example.org/location> ?location .
+}
+INSERT {
+  ?s schema:contentLocation ?addressUri .
+  
+  ?addressUri a schema:PostalAddress ;
+    schema:postalCode ?postalCode ;
+    schema:addressLocality ?addressLocality ;
+    schema:streetAddress ?streetAddress .
+}
+WHERE { 
+    
+    ?s a schema:Photograph ;
+       <http://example.org/streetAddress> ?streetAddress ;
+       <http://example.org/location> ?location .
+    
+    BIND(STRBEFORE(?location, " ") AS ?postalCode)
+    BIND(STRAFTER(?location, " ") AS ?addressLocality)
+    BIND(URI(CONCAT(STR(?s), "/address")) AS ?addressUri)
+
+}
