@@ -1,0 +1,80 @@
+{
+  "@context": "http://www.w3.org/ns/csvw",
+  "url": "gujer.csv",
+  "dialect": {
+    "delimiter": ";"
+  },
+  "tableSchema": {
+    "aboutUrl": "http://data.uster.ch/gujer/{uuid}",
+    "columns": [
+      {
+        "titles": "uuid",
+        "propertyUrl": "skos:notation"
+      },
+      {
+        "titles": "url",
+        "propertyUrl": "schema:image",
+        "valueUrl": "{+url}"
+
+      },
+      {
+        "titles": "filename",
+        "propertyUrl": "http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName"
+      },
+      {
+        "titles": "title",
+        "propertyUrl": "schema:name"
+      },
+      {
+        "titles": "author",
+        "propertyUrl": "schema:author"
+      },
+      {
+        "titles": "date",
+        "propertyUrl": "http://data.alod.ch/alod/legacyTimeRange"
+      },
+      {
+        "titles": "coordinates",
+        "propertyUrl": "http://example.org/lv03"
+      },
+      {
+        "titles": "address",
+        "propertyUrl": "http://example.org/streetAddress"
+      },
+      {
+        "titles": "location",
+        "propertyUrl": "http://example.org/location"
+      },
+      {
+        "titles": "topic",
+        "propertyUrl": "schema:keywords"
+      },
+      {
+        "titles": "content",
+        "propertyUrl": "schema:description"
+      },
+      {
+        "titles": "format",
+        "propertyUrl": "schema:fileFormat"
+      },
+      {
+        "titles": "event",
+        "propertyUrl": "schema:publication"
+      },
+      {
+        "titles": "license",
+        "propertyUrl": "schema:license",
+         "valueUrl": "{+license}"
+      },
+      {
+        "titles": "publisher",
+        "propertyUrl": "schema:publisher"
+      },
+      {
+        "virtual": true,
+        "propertyUrl": "rdf:type",
+        "valueUrl": "schema:Photograph"
+      }
+    ]
+  }
+}
