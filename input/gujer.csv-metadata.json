@@ -15,7 +15,6 @@
         "titles": "url",
         "propertyUrl": "schema:image",
         "valueUrl": "{+url}"
-
       },
       {
         "titles": "filename",
@@ -64,7 +63,7 @@
       {
         "titles": "license",
         "propertyUrl": "schema:license",
-         "valueUrl": "{+license}"
+        "valueUrl": "{+license}"
       },
       {
         "titles": "publisher",

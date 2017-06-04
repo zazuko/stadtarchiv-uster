@@ -1,0 +1,5 @@
+SELECT ?s ?x ?y WHERE { GRAPH <http://example.com/gujer> {
+    ?s <http://example.org/lv03> ?lv03 .
+    BIND(STRBEFORE( ?lv03, ",") AS ?y)
+    BIND(STRAFTER( ?lv03, ",") AS ?x)
+}}

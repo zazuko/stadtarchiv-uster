@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "default": "mkdir -p target && node index.js > target/output.nt"
+    "default": "mkdir -p target && node index.js > target/gujer-wgs84.nt"
   },
   "repository": {
     "type": "git",

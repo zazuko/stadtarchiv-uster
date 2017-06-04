@@ -1,5 +1,0 @@
-SELECT * WHERE {
-  ?s a <http://environment.data.admin.ch/ubd/28/qb/Station> ;
-    <http://environment.data.admin.ch/ubd/28/qb/lv03_x> ?x ;
-    <http://environment.data.admin.ch/ubd/28/qb/lv03_y> ?y ;
-}

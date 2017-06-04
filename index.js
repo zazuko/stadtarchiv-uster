@@ -8,8 +8,8 @@ const inputCount = p.count()
 const outputCount = p.count()
 
 p.run(p.sparql.selectQuery({
-  endpointUrl: 'https://lindasprd.netrics.ch/query',
-  queryFile: path.join(__dirname, 'input/source.sparql')
+  endpointUrl: 'http://localhost:3030/uster/query',
+  queryFile: path.join(__dirname, 'input/source.rq')
 })
   .pipe(inputCount)
   .pipe(p.map((row) => {
@@ -30,11 +30,11 @@ p.run(p.sparql.selectQuery({
       '@id': row.s.value,
       'http://www.w3.org/2003/01/geo/wgs84_pos#lat': {
         '@type': 'http://www.w3.org/2001/XMLSchema#float',
-        '@value': point[1].toString()
+        '@value': point[0].toString()
       },
       'http://www.w3.org/2003/01/geo/wgs84_pos#long': {
         '@type': 'http://www.w3.org/2001/XMLSchema#float',
-        '@value': point[0].toString()
+        '@value': point[1].toString()
       }
     })
   }))

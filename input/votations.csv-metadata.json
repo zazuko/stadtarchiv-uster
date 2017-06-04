@@ -130,7 +130,7 @@
       {
         "virtual": true,
         "propertyUrl": "rdf:type",
-        "valueUrl": "schema:Photograph"
+        "valueUrl": "qb:Observation"
       }
     ]
   }
