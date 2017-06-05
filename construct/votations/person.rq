@@ -11,21 +11,27 @@ PREFIX sc: <http://purl.org/science/owl/sciencecommons/>
 WITH  <http://example.com/votations>
 
 DELETE {
-      ?s <http://example.org/name> ?name .
+      ?s <http://example.org/name> ?name ;
+      <http://example.org/elected> ?isElected ;
+      <http://example.org/ballot_yes> ?votes .
 }
 INSERT {
   ?s schema:candidate ?personUri .
   
   ?personUri a schema:Person ;
     schema:givenName ?givenName ;
-    schema:familyName ?familyName .
+    schema:familyName ?familyName ;
+    uster:elected ?isElected ;
+    uster:votes ?votes .
 }
 WHERE { 
     
   ?s a qb:Observation ;
-     <http://example.org/name> ?name .
+     <http://example.org/name> ?name ;
+     <http://example.org/ballot_yes> ?votes .
     BIND(STRBEFORE(?name, ",") AS ?familyName )
     BIND(STRAFTER(?name, ", ") AS ?givenName )
     BIND(URI(CONCAT(STR(?s), CONCAT("/", ENCODE_FOR_URI(?name)))) AS ?personUri)
 
+  OPTIONAL { ?s <http://example.org/elected> ?isElected  . }
 }
