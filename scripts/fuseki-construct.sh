@@ -19,11 +19,8 @@ sparqlu construct/gujer/publisher.rq $FUSEKI_UPDATE
 
 sparqlu construct/votations/person.rq $FUSEKI_UPDATE
 sparqlu construct/votations/creator.rq $FUSEKI_UPDATE
-
+sparqlu construct/votations/party.rq $FUSEKI_UPDATE
 sparqlu construct/votations/publisher.rq $FUSEKI_UPDATE
-
-
-
 
 # and after that cleanup
 
