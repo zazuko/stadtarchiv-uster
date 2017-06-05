@@ -5,7 +5,7 @@
     "delimiter": ";"
   },
   "tableSchema": {
-    "aboutUrl": "http://data.uster.ch/votations/{uuid}",
+    "aboutUrl": "http://data.uster.ch/votations/{uuid}/{titel}",
     "columns": [
       {
         "titles": "uuid",
