@@ -1,0 +1,31 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema: <http://schema.org/>
+PREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX uster: <http://data.uster.ch/voc/> 
+PREFIX sc: <http://purl.org/science/owl/sciencecommons/>
+
+WITH  <http://example.com/votations>
+
+DELETE {
+      ?s <http://example.org/name> ?name .
+}
+INSERT {
+  ?s schema:candidate ?personUri .
+  
+  ?personUri a schema:Person ;
+    schema:givenName ?givenName ;
+    schema:familyName ?familyName .
+}
+WHERE { 
+    
+  ?s a qb:Observation ;
+     <http://example.org/name> ?name .
+    BIND(STRBEFORE(?name, ",") AS ?familyName )
+    BIND(STRAFTER(?name, ", ") AS ?givenName )
+    BIND(URI(CONCAT(STR(?s), CONCAT("/", ENCODE_FOR_URI(?name)))) AS ?personUri)
+
+}

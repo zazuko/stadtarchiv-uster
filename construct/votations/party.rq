@@ -1,0 +1,32 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema: <http://schema.org/>
+PREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX uster: <http://data.uster.ch/voc/> 
+PREFIX sc: <http://purl.org/science/owl/sciencecommons/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+
+
+WITH  <http://example.com/votations>
+
+DELETE {
+      ?s <http://example.org/politicalparty> ?party .
+}
+INSERT {
+  ?s dct:creator ?partyUri .
+  
+  ?partyUri a schema:Organization, dbo:PoliticalParty ;
+    schema:name ?party .
+
+}
+WHERE { 
+    
+  ?s a qb:Observation ;
+     <http://example.org/politicalparty> ?party .
+    BIND(URI(CONCAT( "http://data.uster.ch/votations/party/", ENCODE_FOR_URI(?party))) AS ?partyUri)
+
+}

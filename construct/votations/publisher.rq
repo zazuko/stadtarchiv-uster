@@ -1,0 +1,21 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX schema: <http://schema.org/>
+PREFIX wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+
+WITH <http://example.com/votations>
+DELETE {
+  ?s <http://schema.org/publisher> ?publisher .
+}
+INSERT {
+  ?s <http://schema.org/publisher> <http://isil.ch/CH-000629-9> .
+}
+WHERE {
+  ?s a qb:Observation ;
+     <http://schema.org/publisher> ?publisher .
+    
+  FILTER( CONTAINS(?publisher, "CH-000629-9"))
+}

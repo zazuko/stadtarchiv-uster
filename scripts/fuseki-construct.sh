@@ -8,11 +8,21 @@ function sparqlu { curl -H "Accept: text/turtle" --data-urlencode update@$1 $2 ;
 
 # some INSERTs
 
+## gujer
 sparqlu construct/gujer/address.rq $FUSEKI_UPDATE
 sparqlu construct/gujer/date.rq $FUSEKI_UPDATE
 sparqlu construct/gujer/jpeg.rq $FUSEKI_UPDATE
 sparqlu construct/gujer/thumbs.rq $FUSEKI_UPDATE
 sparqlu construct/gujer/publisher.rq $FUSEKI_UPDATE
+
+## votations
+
+sparqlu construct/votations/person.rq $FUSEKI_UPDATE
+sparqlu construct/votations/creator.rq $FUSEKI_UPDATE
+
+sparqlu construct/votations/publisher.rq $FUSEKI_UPDATE
+
+
 
 
 # and after that cleanup
