@@ -1,0 +1,14 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/>
+PREFIX nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#>
+
+INSERT { GRAPH <http://example.com/gujer> {
+  ?s schema:thumbnailUrl ?thumbname .
+
+}} WHERE { GRAPH <http://example.com/gujer> {
+  ?s a schema:Photograph ;
+  	nfo:fileName ?filename .
+    
+    BIND(URI(CONCAT("http://ktk.netlabs.org/misc/rdf/uster/", CONCAT(STRBEFORE(?filename, "."), "_thumb.jpg"))) AS ?thumbname )
+}}
