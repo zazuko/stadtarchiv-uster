@@ -26,15 +26,19 @@ p.run(p.sparql.selectQuery({
         p.rdf.literal(point[0].toString(), xsdFloat))
     ]
 */
+
+    // TODO there is either a wrong interpretation or a bug in the swissProjection code, see
+    // https://github.com/idris-maps/swiss-projection-light/issues/1
+    // workaround: flip 0 and 1 in point.
     return p.jsonld.parse.object({
       '@id': row.s.value,
       'http://www.w3.org/2003/01/geo/wgs84_pos#lat': {
         '@type': 'http://www.w3.org/2001/XMLSchema#float',
-        '@value': point[0].toString()
+        '@value': point[1].toString()
       },
       'http://www.w3.org/2003/01/geo/wgs84_pos#long': {
         '@type': 'http://www.w3.org/2001/XMLSchema#float',
-        '@value': point[1].toString()
+        '@value': point[0].toString()
       }
     })
   }))
